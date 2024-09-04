@@ -1,4 +1,4 @@
-let totalTime = 34938
+let totalTime = 0
 let incrementInterval = 1
 let seconds = 0
 let minutes = 0
@@ -9,11 +9,11 @@ const minuteHand = document.querySelector('[data-minute-hand]')
 const secondHand = document.querySelector('[data-second-hand]')
 const secondsSpan = document.querySelector('.seconds')
 
-function increment() {
+setInterval(function increment() {
     totalTime += incrementInterval;
     secondsSpan.innerHTML = totalTime
     renderClock()
-};
+}, 1000);
 
 function renderClock () {
     seconds = totalTime % 60
