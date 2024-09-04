@@ -3,17 +3,18 @@ let incrementInterval = 1
 let seconds = 0
 let minutes = 0
 let hours = 0
+let autoIncrement = false;
 
 const hourHand = document.querySelector('[data-hour-hand]')
 const minuteHand = document.querySelector('[data-minute-hand]')
 const secondHand = document.querySelector('[data-second-hand]')
 const secondsSpan = document.querySelector('.seconds')
 
-setInterval(function increment() {
+function increment() {
     totalTime += incrementInterval;
     secondsSpan.innerHTML = totalTime
     renderClock()
-}, 1000);
+};
 
 function renderClock () {
     seconds = totalTime % 60
@@ -28,3 +29,13 @@ function renderClock () {
 function doubleInterval() {
     incrementInterval *= 2
 };
+
+function autoIncrementToggle() {
+    autoIncrement = !autoIncrement;
+}
+
+setInterval(() => {
+    if (autoIncrement) {
+        increment()
+    }
+}, 1000);
