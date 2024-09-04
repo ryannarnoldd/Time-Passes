@@ -11,12 +11,9 @@
 
   }
 
+  /* Center the stats above the clock. */
   .stats {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 2vmin;
-    box-sizing: border-box;
+    
   }
   
   .game {
@@ -112,7 +109,7 @@
   }
 
   .buttons {
-    display: flex;
+    display: relative;
     justify-content: center;
     gap: 2vmin;
   }

@@ -7,19 +7,14 @@
     <title>Time Passes</title>
 </head>
 <body style="user-select: none">
-
-    <header>
-        Time Passes
-    </header>
-
     <main>
 
     <div class="stats">
-        <h1>Total Seconds: <span class="seconds">0</span></h1>
+        <h2>Total Seconds: <span class="seconds">0</span></h2>
     </div>
 
     <div class="game">
-        <div class="clock" onclick="addSeconds()">
+        <div class="clock" onclick="increment()">
             <div class="hand hour" data-hour-hand></div>
             <div class="hand minute" data-minute-hand></div>
             <div class="hand second" data-second-hand></div>
@@ -39,12 +34,14 @@
     </div>
 
     <div class="buttons">
-        <button onclick="doubleSeconds()">Increment Second Count</button>
+        <button onclick="doubleInterval()">Increment Second Count</button>
     </div>
 
     </main>
+
+    <script src="script.js"></script>
           
-     <script src="script.js"></script>
+    
 
 </body>
 </html>
