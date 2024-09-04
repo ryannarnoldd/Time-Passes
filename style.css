@@ -1,7 +1,5 @@
-*, *::after, *::before {
-    box-sizing: border-box;
-  }
-  
+
+
   body {
     background: linear-gradient(to right, hsl(200, 100%, 50%), hsl(175, 100%, 50%));
     display: flex;
@@ -9,14 +7,34 @@
     align-items: center;
     min-height: 100vh;
     overflow: hidden;
+    width: 100%;
+
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2vmin;
+    box-sizing: border-box;
   }
   
+  .game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* /* Make clock dyanimc to viewport without px */
   .clock {
-    width: 300px;
-    height: 300px;
+    width: 90vmin;
+    height: 90vmin;
     background-color: white;
     border-radius: 50%;
-    border: 2px solid black;
+    border: 1.5vmin solid black;
     position: relative;
   }
   
@@ -27,20 +45,20 @@
     height: 100%;
     text-align: center;
     transform: rotate(var(--rotation));
-    font-size: 1.5rem;
+    font-size: 7.5vmin
   }
-  
-  .clock .number1 { --rotation: 30deg; }
-  .clock .number2 { --rotation: 60deg; }
-  .clock .number3 { --rotation: 90deg; }
-  .clock .number4 { --rotation: 120deg; }
-  .clock .number5 { --rotation: 150deg; }
-  .clock .number6 { --rotation: 180deg; }
-  .clock .number7 { --rotation: 210deg; }
-  .clock .number8 { --rotation: 240deg; }
-  .clock .number9 { --rotation: 270deg; }
-  .clock .number10 { --rotation: 300deg; }
-  .clock .number11 { --rotation: 330deg; }
+
+.clock .number1 { --rotation: 30deg; }
+.clock .number2 { --rotation: 60deg; }
+.clock .number3 { --rotation: 90deg; }
+.clock .number4 { --rotation: 120deg; }
+.clock .number5 { --rotation: 150deg; }
+.clock .number6 { --rotation: 180deg; }
+.clock .number7 { --rotation: 210deg; }
+.clock .number8 { --rotation: 240deg; }
+.clock .number9 { --rotation: 270deg; }
+.clock .number10 { --rotation: 300deg; }
+.clock .number11 { --rotation: 330deg; }
   
   .clock .hand {
     --rotation: 0;
@@ -48,45 +66,74 @@
     bottom: 50%;
     left: 50%;
     border: 1px solid white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 50vmin;
+    border-top-right-radius: 50vmin;
     transform-origin: bottom;
     z-index: 10;
     transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
   }
   
+  /* Make the dot in the center dynamic responsible to the scree nsize/ */
   .clock::after {
     content: '';
     position: absolute;
     background-color: black;
     z-index: 11;
-    width: 15px;
-    height: 15px;
+    width: 3%;
+    height: 3%;
+    
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
   }
 
-  /* Clock hover make it a clickable mouse icon. */
-    .clock:hover {
-        cursor: pointer;
-    }
+  /* Clock hover make it a clickable mous */
+  .clock:hover {
+    cursor: pointer;
+  }
   
   .clock .hand.second {
-    width: 3px;
+    width: .5vmin;
     height: 45%;
     background-color: red;
   }
   
   .clock .hand.minute {
-    width: 7px;
+    width: 1.5vmin;
     height: 40%;
     background-color: black;
   }
   
   .clock .hand.hour {
-    width: 10px;
-    height: 35%;
+    width: 2.15vmin;
+    height: 30%;
     background-color: black;
   }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2vmin;
+  }
+
+  button {
+    padding: 1vmin 2vmin;
+    font-size: 2vmin;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Make h1 centered at top of screen. */
+  /* Make this responsible since the clck is now too */
+  /* Do not do absolute. */
+    h1 {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 3vmin;
+    }
