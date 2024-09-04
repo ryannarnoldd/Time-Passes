@@ -6,9 +6,13 @@
     <link rel="stylesheet" href="style.css">
     <title>Time Passes</title>
 </head>
-<body>
-    
-    <div class="clock">
+<body style="user-select: none">
+
+    <header>
+        <h1>Total Seconds: <span class="seconds">0</span></h1>
+    </header>
+
+    <div class="clock" onclick="addSeconds()">
         <div class="hand hour" data-hour-hand></div>
         <div class="hand minute" data-minute-hand></div>
         <div class="hand second" data-second-hand></div>

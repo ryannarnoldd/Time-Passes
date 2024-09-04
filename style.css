@@ -67,6 +67,11 @@
     transform: translate(-50%, -50%);
     border-radius: 50%;
   }
+
+  /* Clock hover make it a clickable mouse icon. */
+    .clock:hover {
+        cursor: pointer;
+    }
   
   .clock .hand.second {
     width: 3px;
