@@ -1,4 +1,4 @@
-let totalTime = 0
+let totalTime = 3563
 let incrementInterval = 1
 let seconds = 0
 let minutes = 0
@@ -9,6 +9,9 @@ const hourHand = document.querySelector('[data-hour-hand]')
 const minuteHand = document.querySelector('[data-minute-hand]')
 const secondHand = document.querySelector('[data-second-hand]')
 const secondsSpan = document.querySelector('.seconds')
+const autoSpan = document.querySelector('.auto')
+const increaseSpan = document.querySelector('.increase')
+
 
 function increment() {
     totalTime += incrementInterval;
@@ -26,12 +29,16 @@ function renderClock () {
     hourHand.style.setProperty('--rotation', hours * 30)
 };
 
-function doubleInterval() {
-    incrementInterval *= 2
+function increaseInterval() {
+    incrementInterval++;
+    // set the interval span to the new interval
+    increaseSpan.innerHTML = `+${incrementInterval}`;
 };
 
 function autoIncrementToggle() {
     autoIncrement = !autoIncrement;
+    // set uato span to say off or true.
+    autoSpan.innerHTML = autoIncrement ? 'ON' : 'OFF'
 }
 
 setInterval(() => {
