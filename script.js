@@ -1,4 +1,4 @@
-let totalTime = 3563
+let totalTime = 0
 let incrementInterval = 1
 let seconds = 0
 let minutes = 0

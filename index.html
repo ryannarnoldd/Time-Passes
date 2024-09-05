@@ -6,39 +6,39 @@
     <link rel="stylesheet" href="style.css">
     <title>Time Passes</title>
 </head>
+
 <body style="user-select: none">
     <main>
 
-    <div class="stats">
-        <h2>Total Seconds: <span class="seconds">0</span></h2>
-    </div>
+        <section class="stats">
+            <h2>Total Seconds: <span class="seconds">0</span></h2>
+        </section>
 
-    <div class="game">
-        <div class="clock" onclick="increment()">
-            <div class="hand hour" data-hour-hand></div>
-            <div class="hand minute" data-minute-hand></div>
-            <div class="hand second" data-second-hand></div>
-            <div class="number number1">1</div>
-            <div class="number number2">2</div>
-            <div class="number number3">3</div>
-            <div class="number number4">4</div>
-            <div class="number number5">5</div>
-            <div class="number number6">6</div>
-            <div class="number number7">7</div>
-            <div class="number number8">8</div>
-            <div class="number number9">9</div>
-            <div class="number number10">10</div>
-            <div class="number number11">11</div>
-            <div class="number number12">12</div>
-        </div>
-    </div>
+        <section class="game">
+            <div class="clock" onclick="increment()" style="background-color: green">  
+                <div class="hand hour" data-hour-hand></div>
+                <div class="hand minute" data-minute-hand></div>
+                <div class="hand second" data-second-hand></div>
+                <div class="number number1">1</div>
+                <div class="number number2">2</div>
+                <div class="number number3">3</div>
+                <div class="number number4">4</div>
+                <div class="number number5">5</div>
+                <div class="number number6">6</div>
+                <div class="number number7">7</div>
+                <div class="number number8">8</div>
+                <div class="number number9">9</div>
+                <div class="number number10">10</div>
+                <div class="number number11">11</div>
+                <div class="number number12">12</div>
+            </div>
+        </section>
 
-    <div class="buttons">
-        <button onclick="increaseInterval()">Increment Second <span class="increase">+1</span></button>
-        <!-- Auto increment button. -->
-         <br /> <br />
-        <button onclick="autoIncrementToggle()">Auto Increment: <span class="auto">OFF</span></button>
-    </div>
+        <section class="upgrades">
+            <button onclick="increaseInterval()">Increment Second <span class="increase">+1</span></button>
+            <br /> <br />
+            <button onclick="autoIncrementToggle()">Auto Increment: <span class="auto">OFF</span></button>
+        </section>
 
     </main>
 
